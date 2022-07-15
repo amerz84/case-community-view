@@ -1,0 +1,139 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <lightning-card>  
+    <lightning-record-view-form record-id={recordId}    
+                                object-api-name="Case">
+          <section class="slds-section slds-grid slds-wrap slds-gutters_small">    
+            <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">                                
+                <lightning-output-field 
+                  field-name="CaseNumber"
+                  field-class="slds-border_bottom"
+                  class="slds-form-element slds-form-element_stacked">    
+                </lightning-output-field>    
+            </div>  
+            <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">
+              <label class="slds-form-element__label slds-m-left_xx-small" for="case-field-account-name">Account Name</label>                               
+              <lightning-output-field 
+                field-name="AccountId"
+                field-class="slds-border_bottom"
+                class="slds-form-element slds-form-element_stacked border-bottom"
+                variant="label-hidden"
+                id="case-field-account-name">    
+              </lightning-output-field>
+            </div>   
+            <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">   
+              <label class="slds-form-element__label slds-m-left_xx-small" for="case-field-title">Title</label>                             
+              <lightning-output-field 
+                field-name="Subject"
+                field-class="slds-border_bottom"
+                class="slds-form-element slds-form-element_stacked"
+                variant="label-hidden"
+                id="case-field-title">    
+              </lightning-output-field>    
+            </div>
+            <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">   
+              <label class="slds-form-element__label slds-m-left_xx-small" for="case-field-contact-name">Contact Name</label>                             
+              <lightning-output-field 
+                field-name="ContactId"
+                field-class="slds-border_bottom"
+                class="slds-form-element slds-form-element_stacked border-bottom"
+                variant="label-hidden"
+                id="case-field-contact-name">    
+              </lightning-output-field>    
+            </div>     
+            <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">                                
+              <lightning-output-field 
+                field-name="Status"
+                field-class="slds-border_bottom"
+                class="slds-form-element slds-form-element_stacked">    
+              </lightning-output-field>    
+            </div>  
+          </section>    
+          <section class={sectionClassAircraft}>
+            <h3 class="slds-section__title slds-size_2-of-2">
+              <button class="slds-button slds-section__title-action section-header__btn" 
+                      aria-controls="expand-section-case-aircraft" 
+                      name="aircraft" 
+                      aria-expanded={btnExpanded}
+                      onclick={toggleSection}>
+                <lightning-icon
+                  icon-name="utility:chevrondown" 
+                  size="xx-small" 
+                  class="slds-m-right_x-small section-icon slds-button__icon slds-button__icon_left slds-section__title-action-icon">
+                </lightning-icon>
+                <span class="slds-truncate" title="Section Title">Aircraft</span>
+              </button>
+            </h3>
+            <div class="slds-section__content slds-grid slds-wrap slds-size_2-of-2 section-content">
+              <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">                                
+                <lightning-output-field 
+                  field-name="Aircraft__c"
+                  field-class="slds-border_bottom"
+                  class="slds-form-element slds-form-element_stacked border-bottom">    
+                </lightning-output-field>    
+              </div>
+              <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">                                
+                <lightning-output-field 
+                  field-name="Tail_Number__c"
+                  field-class="slds-border_bottom"
+                  class="slds-form-element slds-form-element_stacked">    
+                </lightning-output-field>    
+              </div>
+              <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">                                
+                <lightning-output-field 
+                  field-name="Flight_Hours__c"
+                  field-class="slds-border_bottom"
+                  class="slds-form-element slds-form-element_stacked">    
+                </lightning-output-field>    
+              </div>
+              <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">                                
+                <lightning-output-field 
+                  field-name="Model__c"
+                  field-class="slds-border_bottom"
+                  class="slds-form-element slds-form-element_stacked">    
+                </lightning-output-field>    
+              </div>
+              <div class="slds-col slds-size_1-of-2 slds-form slds-form_stacked">                                
+                <lightning-output-field 
+                  field-name="Hobbs_Hours__c"
+                  field-class="slds-border_bottom"
+                  class="slds-form-element slds-form-element_stacked">    
+                </lightning-output-field>    
+              </div>
+            </div>
+          </section>
+          <section class={sectionClassSysInfo}>
+            <h3 class="slds-section__title slds-size_2-of-2">
+              <button class="slds-button slds-section__title-action section-header__btn" 
+                      aria-controls="expand-section-case-aircraft-sys-info" 
+                      name="sys-info" 
+                      aria-expanded="false" 
+                      onclick={toggleSection}>
+                <lightning-icon 
+                  icon-name="utility:chevrondown" 
+                  size="xx-small" 
+                  class="slds-m-right_x-small section-icon slds-button__icon slds-button__icon_left slds-section__title-action-icon">
+                </lightning-icon>
+                <span class="slds-truncate" title="Section Title">System Information</span>
+              </button>
+            </h3>
+            <div class="slds-section__content slds-grid slds-wrap slds-size_2-of-2">
+              <div class="slds-col slds-size_1-of-2">                                
+                <lightning-output-field 
+                  field-name="CreatedDate"
+                  field-class="slds-border_bottom"
+                  class="slds-form-element slds-form-element_stacked">    
+                </lightning-output-field>    
+              </div>
+              <div class="slds-col slds-size_1-of-2">                                
+                <lightning-output-field 
+                  field-name="ClosedDate"
+                  field-class="slds-border_bottom"
+                  class="slds-form-element slds-form-element_stacked">    
+                </lightning-output-field>    
+              </div>
+            </div>            
+          </section>
+    </lightning-record-view-form>  
+  </lightning-card>  
+</template>

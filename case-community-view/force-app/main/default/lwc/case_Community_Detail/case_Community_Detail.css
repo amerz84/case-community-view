@@ -1,0 +1,42 @@
+:host {
+  --border-bottom: 1px dotted;
+  --padding-bottom: 0.5em;
+}
+
+.slds-border_bottom a {
+  border-bottom: var(--border-bottom);
+  padding-bottom: var(--padding-bottom);
+}
+
+.section-icon {
+  transition: transform .3s ease-in-out !important;
+}
+
+.slds-section__title span {
+  pointer-events: none;
+}
+
+.slds-section__title .section-header__btn {
+  background: white;
+  transition: all 150ms;
+}
+
+.slds-section__title .section-header__btn:hover,
+.slds-section__title .section-header__btn:focus {
+  background: rgb(243, 243, 243);
+}
+
+.slds-section.slds-is-open .slds-section__content {
+  padding-top: 0.5em;
+  overflow: initial;
+  max-height: 1000px;
+  visibility: visible;
+  opacity: 1;
+  transition: all .4s ease-in-out
+}
+
+.slds-section:not(.slds-is-open) .slds-section__content {
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+}
