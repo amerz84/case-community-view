@@ -1,5 +1,4 @@
 /* eslint-disable @lwc/lwc/no-api-reassignments */
-import '@lwc/synthetic-shadow';
 import { LightningElement, api } from 'lwc';
 
 
